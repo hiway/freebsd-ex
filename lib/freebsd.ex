@@ -4,15 +4,18 @@ defmodule FreeBSD do
   """
 
   @doc """
-  Hello world.
-
   ## Examples
 
-      iex> FreeBSD.version()
-      "13.0-RELEASE-p7"
+      iex> FreeBSD.version
+      "13.0-RELEASE-p11"
 
   """
   def version do
-    FreeBSD.Version.freebsd_version()
+    FreeBSD.Version.freebsd_version
+  end
+
+  def update do
+    FreeBSD.Update.fetch
+    FreeBSD.Update.install
   end
 end
