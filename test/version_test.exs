@@ -1,5 +1,6 @@
 defmodule FreeBSDVersionTest do
   use ExUnit.Case
+  doctest FreeBSD.Version
 
   test "freebsd-version contains RELEASE" do
     assert FreeBSD.Version.freebsd_version() |> String.contains?("RELEASE")

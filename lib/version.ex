@@ -1,4 +1,15 @@
 defmodule FreeBSD.Version do
+  @moduledoc """
+  Documentation for `FreeBSD.Version`.
+  """
+
+  @doc """
+  ## Examples
+
+      iex> FreeBSD.Version.freebsd_version
+      "13.0-RELEASE-p11"
+
+  """
   alias FreeBSD.CLI
 
   def freebsd_version() do
