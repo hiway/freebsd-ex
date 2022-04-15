@@ -18,4 +18,8 @@ defmodule FreeBSD do
     FreeBSD.Update.fetch
     FreeBSD.Update.install
   end
+
+  def hostname do
+    FreeBSD.Hostname.hostname
+  end
 end
