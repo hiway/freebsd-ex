@@ -8,11 +8,11 @@ defmodule FreeBSD do
 
   ## Examples
 
-      iex> FreeBSD.hello()
-      :world
+      iex> FreeBSD.version()
+      "13.0-RELEASE-p7"
 
   """
-  def hello do
-    :world
+  def version do
+    FreeBSD.Version.freebsd_version()
   end
 end
