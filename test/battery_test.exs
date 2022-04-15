@@ -4,12 +4,12 @@ defmodule FreeBSDBatteryTest do
 
   test "battery api" do
     if FreeBSD.Battery.has_battery? do
-      batt = FreeBSD.Battery.charge_percent
-      assert batt >= 0
-      assert batt <= 100
-
       if FreeBSD.Battery.has_ac_power? == true do
-        assert FreeBSD.Battery.is_charging? == true
+        if FreeBSD.Battery.is_charging? == true do
+          assert FreeBSD.Battery.charge_percent <= 99
+        else
+          assert FreeBSD.Battery.charge_percent >= 99
+        end
       else
         assert FreeBSD.Battery.is_discharging? == true
       end
